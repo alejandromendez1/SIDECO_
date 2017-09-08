@@ -1,3 +1,4 @@
 from django.shortcuts import render
 
-# Create your views here.
+def trabajos_lista(request):
+    return render(request, 'sidecoapp/trabajos_lista.html', {})
