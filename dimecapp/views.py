@@ -1,7 +1,13 @@
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, authenticate
 from django.shortcuts import render, redirect
 from .models import *
 from dimecapp.forms import SignUpForm
+
+@login_required
+def home(request):
+    return render(request, 'home.html')
+
 
 def signup(request):
     if request.method == 'POST':
@@ -16,6 +22,7 @@ def signup(request):
     else:
         form = SignUpForm()
     return render(request, 'signup.html', {'form': form})
+
 
 def trabajos_lista(request):
     return render(request, 'dimecapp/trabajos_lista.html', {})

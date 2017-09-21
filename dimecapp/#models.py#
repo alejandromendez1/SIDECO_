@@ -1,11 +1,22 @@
+
 from django.db import models
 from django.utils import timezone
 
-class Desempleado(models.Model):
+class Sistema(models.Model):
+    empresas_verificadas = models.ForeignKey('Empresa', related_name='empresas_verificadas')
+    desocupados_verificados = models.ForeignKey('Desocupado')
+    empresas_en_alta = models.ForeignKey('Empresa', related_name='empresas_en_alta')
+
+class Desocupado(models.Model):
     nombre = models.CharField(max_length=20)
     apellido = models.CharField(max_length=20)
     fecha_nacimiento = models.DateField()
-    tipo_trabajo = models.CharField(max_length=50)
+    localidad = models.CharField(max_length=20)
+    estado_ocupacion = models.BooleanField()
+    experiencia_laboral = models.TextField()
+    formacion = models.TextField()
+    habilidades = models.TextField()
+    trabajo_realizable = models.CharField(max_length=50)
     dni = models.IntegerField()
 
     def __str__(self):
@@ -22,4 +33,4 @@ class Empresa(models.Model):
 
 class OfertaLaboral(models.Model):
     empresa_oferta = models.ForeignKey('Empresa')
-    trabajo_solicitado = models.CharField(max_length=50)
+    tipo_de_trabajo = models.CharField(max_length=50)
