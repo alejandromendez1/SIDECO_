@@ -3,7 +3,4 @@
 {% block content %}
   <h2>Bienvenido, {{ user.get_full_name }} <small>{{ user.username }}</small>!</h2>
   <p>Tu email es: {{ user.email }}</p>
-
-  <a href="{% url 'signup_empresa' %}">Registrar empresa.</a>
-
 {% endblock %}

@@ -6,5 +6,4 @@ from django.contrib import admin
 from django.conf import settings
 
 urlpatterns = [
-    url(r'^$', views.trabajos_lista),
 ]

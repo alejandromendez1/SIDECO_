@@ -22,7 +22,3 @@ def signup(request):
     else:
         form = SignUpForm()
     return render(request, 'signup.html', {'form': form})
-
-
-def trabajos_lista(request):
-    return render(request, 'dimecapp/trabajos_lista.html', {})
