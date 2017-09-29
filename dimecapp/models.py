@@ -14,7 +14,7 @@ class Desocupado(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     nombre = models.CharField(max_length=20)
     apellido = models.CharField(max_length=20)
-    fecha_nacimiento = models.DateField()
+    fecha_nacimiento = models.DateField(null=True)
     localidad = models.CharField(max_length=20)
     estado_ocupacion = models.BooleanField()
     experiencia_laboral = models.TextField()
