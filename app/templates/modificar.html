@@ -1,0 +1,11 @@
+{% extends 'login.html' %}
+
+{% block content %}
+  <h2>Modifica tu informacion</h2>
+  <form method="post">
+    {{ csrf_input }}
+    <input type="hidden" name="next" value="{{ next }}" />
+    <p>¿Necesitas cambiar algun dato de registro?  </p>	
+    <a href="{{ url('registrar.desocupado') }}">Hacelo aca.</a>
+  </form>
+{% endblock %}

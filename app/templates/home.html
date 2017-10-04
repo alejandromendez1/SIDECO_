@@ -9,5 +9,6 @@
   {% endif %}
   {% if user.is_desocupado() %}
     <p>DNI: {{ user.profile().dni }}</p>
+    <a href="{{ url('modificar') }}">¿Deseas modificar tus datos?</a>
   {% endif %}
 {% endblock %}
